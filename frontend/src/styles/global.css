@@ -1,0 +1,145 @@
+/* ─────────────────────────────────────────────
+   576.39 — Global Stylesheet
+   ───────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Poppins:wght@200;300;400;500&display=swap');
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: #0A0705;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ── Animations ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0705;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 2px;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: #FAF5EC;
+}
+
+/* ── Responsive: Nav ── */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none !important;
+  }
+  .nav-mobile-btn {
+    display: block !important;
+  }
+  nav {
+    padding: 20px 24px !important;
+  }
+}
+
+/* ── Responsive: Two-column grids → single column ── */
+@media (max-width: 768px) {
+  #about,
+  .founder-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Responsive: Divisions layout ── */
+@media (max-width: 900px) {
+  .div-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .div-inner {
+    grid-template-columns: 1fr !important;
+    padding: 32px 24px !important;
+  }
+}
+
+/* ── Responsive: Gallery grid ── */
+@media (max-width: 600px) {
+  #work .masonry-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Responsive: Journal grid ── */
+@media (max-width: 768px) {
+  .journal-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Responsive: Case study rows ── */
+@media (max-width: 900px) {
+  .case-row {
+    grid-template-columns: 1fr 1fr !important;
+    row-gap: 12px;
+  }
+  .case-row-tag {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .case-row {
+    grid-template-columns: 1fr !important;
+  }
+}
